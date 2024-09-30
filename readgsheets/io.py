@@ -13,4 +13,3 @@ def parse(key=_default_key()):
     data = pd.read_csv(link)
 
     return data
-
