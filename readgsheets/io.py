@@ -19,7 +19,7 @@ def enrich(data):
     """ Enrich table with extra columns """
     from readgsheets.auxs import clickable_link
 
-    data["NameURL"] = data["Name"].where(pd.isna(data["URL"]), 
+    data["Name"] = data["Name"].where(pd.isna(data["URL"]), 
                                          clickable_link(data["Name"], data["URL"]))
     
     return data
