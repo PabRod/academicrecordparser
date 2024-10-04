@@ -1,2 +1,4 @@
 def papers(data):
-    return data.query('Type == "Paper"')
+    data = data.query('Type == "Paper"')
+    data = data[["Date", "Name", "Author", "Status", "Publisher"]]
+    return data

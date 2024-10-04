@@ -1,4 +1,5 @@
 import pandas as pd
+from tabulate import tabulate
 
 def _default_key():
     """ Return the default key """
@@ -24,3 +25,10 @@ def drop_clutter(data):
                     "Notes"]
     
     return data.drop(columns = TO_BE_DROPPED)
+
+def as_table(data):
+    """ Export as a table """
+    return tabulate(data,
+                    tablefmt="github",
+                    headers="keys", 
+                    showindex=False)
