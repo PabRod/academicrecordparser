@@ -1,4 +1,4 @@
 def papers(data):
     data = data.query('Type == "Paper"')
-    data = data[["Date", "Name", "Author", "Status", "Publisher"]]
+    data = data[["Date", "NameURL", "Author", "Status", "Publisher"]]
     return data

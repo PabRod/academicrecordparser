@@ -15,6 +15,15 @@ def parse(key=_default_key()):
     
     return data
 
+def enrich(data):
+    """ Enrich table with extra columns """
+    from readgsheets.auxs import clickable_link
+
+    data["NameURL"] = data["Name"].where(pd.isna(data["URL"]), 
+                                         clickable_link(data["Name"], data["URL"]))
+    
+    return data
+
 def drop_clutter(data):
     """ First round of removing unnecessary data """
     TO_BE_DROPPED = ["Peer.reviewed", 
