@@ -7,6 +7,7 @@ Lang: {{ lang }}
 Authors: Pablo Rodríguez-Sánchez
 Summary: Academic publications
 Modified: 09/24/2024, 11:58:04
+{% if lang != "en" %}Translation: True{% else %}{% endif %}
 
 {% if lang == "es" %}
 
@@ -19,6 +20,11 @@ He sido autor o coautor en {{ num_publications }} publicaciones científicas:
 
 {{ books_table }}
 
+## Tesis doctoral
+
+{{ thesis_table }}
+
+
 {% elif lang == "nl" %}
 
 ## Wetenschappelijke artikels
@@ -30,6 +36,11 @@ Ik ben de auteur of coauteur van {{ num_publications }} wetenschappelijke artike
 
 {{ books_table }}
 
+## PhD disertatie
+
+{{ thesis_table }}
+
+
 {% else %}
 
 ## Scientific articles
@@ -40,5 +51,10 @@ I’ve been author or coauthor in {{ num_publications }} scientific articles:
 ## Books
 
 {{ books_table }}
+
+## PhD thesis
+
+{{ thesis_table }}
+
 
 {% endif %}

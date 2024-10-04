@@ -7,3 +7,8 @@ def books(data):
     data = data.query('Type == "Book"')
     data = data[["Date", "Name", "Role", "Institution"]]
     return data
+
+def thesis(data):
+    data = data.query('Type == "Thesis"')
+    data = data[["Date", "Name", "Role", "Institution"]]
+    return data
