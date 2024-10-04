@@ -11,18 +11,34 @@ Modified: 09/24/2024, 11:58:04
 {% if lang == "es" %}
 
 ## Publicaciones científicas
-He sido autor o coautor en {{ number }} publicaciones científicas:
+He sido autor o coautor en {{ num_publications }} publicaciones científicas:
+
+{{ publications_table }}
+
+## Libros
+
+{{ books_table }}
 
 {% elif lang == "nl" %}
 
 ## Wetenschappelijke artikels
-Ik ben de auteur of coauteur van {{ number }} wetenschappelijke artikels geweest:
+Ik ben de auteur of coauteur van {{ num_publications }} wetenschappelijke artikels geweest:
+
+{{ publications_table }}
+
+## Boeken
+
+{{ books_table }}
 
 {% else %}
 
 ## Scientific articles
-I’ve been author or coauthor in {{ number }} scientific articles:
-
-{% endif %}
+I’ve been author or coauthor in {{ num_publications }} scientific articles:
 
 {{ publications_table }}
+
+## Books
+
+{{ books_table }}
+
+{% endif %}
