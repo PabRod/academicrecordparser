@@ -11,6 +11,6 @@ Modified: 09/24/2024, 11:58:04
 Scientific articles
 -------------------
 
-I’ve been author or coauthor in 9 scientific articles:
+I’ve been author or coauthor in {{ number }} scientific articles:
 
 {{ publications_table }}
