@@ -1,6 +1,11 @@
 import pandas as pd
 from tabulate import tabulate
 
+# ===== Input =====
+def get_data():
+    """ Typical workflow """ 
+    return drop_clutter(enrich(parse()))
+
 def _default_key():
     """ Return the default key """
     with open("key.txt") as f:
@@ -35,6 +40,7 @@ def drop_clutter(data):
     
     return data.drop(columns = TO_BE_DROPPED)
 
+# ===== Output =====
 def as_table(data):
     """ Export as a table """
     return tabulate(data,
