@@ -2,6 +2,7 @@ import pandas as pd
 from tabulate import tabulate
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
+from readgsheets.filters import *
 
 # ===== Input =====
 def get_data():
@@ -41,6 +42,15 @@ def drop_clutter(data):
                     "Notes"]
     
     return data.drop(columns = TO_BE_DROPPED)
+
+def as_template_args(data):
+    template_args = {"publications_table" : as_table(papers(data)), 
+                     "num_publications" : papers(data).shape[0],
+                     "books_table" : as_table(books(data)),
+                     "thesis_table" : as_table(thesis(data)),
+                     }
+    
+    return template_args
 
 # ===== Output =====
 def as_table(data):
