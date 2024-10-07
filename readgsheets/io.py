@@ -50,6 +50,10 @@ def as_template_args(data):
                      "thesis_table" : as_table(thesis(data)),
                      "teaching_table" : as_table(teaching(data)),
                      "num_teaching" : teaching(data).shape[0],
+                     "formal_table" : as_table(formal(data)),
+                     "secondments_table" : as_table(secondments(data)),
+                     "conferences_table" : as_table(conferences(data)),
+                     "num_conferences" : conferences(data).shape[0],
                      }
     
     return template_args

@@ -1,0 +1,63 @@
+Title: Education test
+Date: 4/12/2018, 11:15:11 AM
+Category: About-me
+Tags: info
+Slug: education-test
+Lang: {{ lang }}
+Authors: Pablo Rodríguez-Sánchez
+Summary: Education
+Modified: 09/24/2024, 11:57:59
+{% if lang != "en" %}Translation: True{% else %}{% endif %}
+
+{% if lang == "es" %}
+Estudios reglados
+----------------
+{{ formal_table }}
+
+Estancias
+----------------
+He tenido la oportunidad de realizar las siguientes estancias internacionales:
+
+{{ secondments_table }}
+
+Conferencias y talleres
+-------------------------
+He participado en {{ num_conferences }} conferencias, congresos y talleres:
+
+{{ conferences_table }}
+
+{% elif lang == "nl" %}
+Formeel onderwijs
+----------------
+{{ formal_table }}
+
+Secondments
+-----------
+Ik studeerde ook bij andere universiteiten:
+
+{{ secondments_table }}
+
+Congressen en workshops
+-------------------------
+Ik ben in {{ num_conferences }} congressen en workshops geweest:
+
+{{ conferences_table }}
+
+{% else %}
+Formal education
+----------------
+{{ formal_table }}
+
+Secondments
+-----------
+I had the following secondments in other institutions:
+
+{{ secondments_table }}
+
+Conferences and workshops
+-------------------------
+I’ve attended {{ num_conferences }} congresses and workshops:
+
+{{ conferences_table }}
+
+{% endif %}
