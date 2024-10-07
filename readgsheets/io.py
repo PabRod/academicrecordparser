@@ -54,6 +54,15 @@ def as_template_args(data):
                      "secondments_table" : as_table(secondments(data)),
                      "conferences_table" : as_table(conferences(data)),
                      "num_conferences" : conferences(data).shape[0],
+                     "talks_table" : as_table(talks(data)),
+                     "num_talks" : talks(data).shape[0],
+                     "blogs_en_table" : as_table(blogs(data, language="English")),
+                     "num_blogs_en" : blogs(data, language="English").shape[0],
+                     "blogs_es_table" : as_table(blogs(data, language="Spanish")),
+                     "num_blogs_es" : blogs(data, language="Spanish").shape[0],
+                     "blogs_nl_table" : as_table(blogs(data, language="Dutch")),
+                     "num_blogs_nl" : blogs(data, language="Dutch").shape[0],
+                     "others_table" : as_table(others(data)),
                      }
     
     return template_args

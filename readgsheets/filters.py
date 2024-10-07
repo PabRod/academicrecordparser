@@ -35,3 +35,19 @@ def conferences(data):
     data = data.query('Type == "Congress" | Type == "Workshop"')
     data = data[["Date", "Name", "Institution", "Role", "Country"]]
     return data
+
+# For media page
+def blogs(data, language = "English"):
+    data = data.query(f'Type == "Article" & Language == "{language}"')
+    data = data[["Date", "Name", "Institution"]]
+    return data
+
+def talks(data):
+    data = data.query('Type == "Talk"')
+    data = data[["Date", "Name", "Institution", "Language"]]
+    return data
+
+def others(data):
+    data = data.query('Type == "Interview" | Type == "Podcast" | Type == "TV" | Type == "Radio"')
+    data = data[["Date", "Name", "Type", "Role", "Institution", "Language"]]
+    return data

@@ -1,0 +1,92 @@
+Title: In the media test
+Date: 4/12/2018, 11:15:11 AM
+Category: About-me
+Tags: info
+Slug: sci-comm-test
+Lang: {{ lang }}
+Authors: Pablo Rodríguez-Sánchez
+Summary: Activities and publications related with science communication
+Modified: 09/24/2024, 12:00:16
+{% if lang != "en" %}Translation: True{% else %}{% endif %}
+
+{% if lang == "es" %}
+# En los medios
+
+A día de hoy he dado {{ num_talks }} charlas para público general.
+Además, he publicado varios artículos de divulgación científica:
+{{ num_blogs_en }} de ellos en inglés, {{ num_blogs_es }} en español y {{ num_blogs_nl }} en neerlandés.ç
+
+## Charlas
+
+{{ talks_table }}
+
+## Divulgación en inglés
+
+{{ blogs_en_table }}
+
+## Divulgación en neerlandés
+
+{{ blogs_nl_table }}
+
+## Divulgación en español
+
+{{ blogs_es_table }}
+
+## Otros
+
+{{ others_table }}
+
+{% elif lang == "nl" %}
+# In de media
+
+Tot nu toe, ik heb {{ num_talks }} praatjes gegeven voor een algemeen publiek.
+Daarnaast heb ik een aantal blogartikelen gepubliceerd:
+{{ num_blogs_en }} in het Engels, {{ num_blogs_es }} in het Spaans en {{ num_blogs_nl }} in het Nederlands.
+
+## Praatjes
+
+{{ talks_table }}
+
+## Artikels in het Engels
+
+{{ blogs_en_table }}
+
+## Artikels in het Nederlands
+
+{{ blogs_nl_table }}
+
+## Artikels in het Spaans
+
+{{ blogs_es_table }}
+
+## Andere
+
+{{ others_table }}
+
+{% else %}
+# In the media
+
+Up to date, I've given {{ num_talks }} talks for a general audience. Additionally, I've published a number of science communication blog
+pieces: {{ num_blogs_en }} in English, {{ num_blogs_es }} in Spanish and {{ num_blogs_nl }} in Dutch.
+
+## Talks
+
+{{ talks_table }}
+
+## Science communication publications in English
+
+{{ blogs_en_table }}
+
+## Science communication publications in Dutch
+
+{{ blogs_nl_table }}
+
+## Science communication publications in Spanish
+
+{{ blogs_es_table }}
+
+## Others
+
+{{ others_table }}
+
+{% endif %}
