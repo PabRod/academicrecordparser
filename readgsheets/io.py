@@ -84,6 +84,6 @@ def use_template(slug, lang, output_dir, environment=Environment(loader=FileSyst
     content = template.render(lang = lang, **template_args) # Pass all args but lang as dictionary
 
     ## Save it
-    filename = Path(output_dir, f"{slug}-test-{lang}.md")
+    filename = Path(output_dir, f"{slug}-{lang}.md")
     with open(filename, mode = "w") as f:
         f.write(content)
