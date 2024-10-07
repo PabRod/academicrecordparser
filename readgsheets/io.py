@@ -48,6 +48,8 @@ def as_template_args(data):
                      "num_publications" : papers(data).shape[0],
                      "books_table" : as_table(books(data)),
                      "thesis_table" : as_table(thesis(data)),
+                     "teaching_table" : as_table(teaching(data)),
+                     "num_teaching" : teaching(data).shape[0],
                      }
     
     return template_args

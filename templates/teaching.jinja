@@ -1,0 +1,37 @@
+Title: Teaching test
+Date: 4/12/2018, 11:15:11 AM
+Category: About-me
+Tags: info
+Slug: teaching-test
+Lang: {{ lang }}
+Authors: Pablo Rodríguez-Sánchez
+Summary: Teaching activities
+Modified: 09/24/2024, 11:58:02
+{% if lang != "en" %}Translation: True{% else %}{% endif %}
+
+{% if lang == "es" %}
+Docencia
+--------
+
+He estado involucrado en estos {{ num_teaching }} cursos:
+
+{{ teaching_table }}
+
+{% elif lang == "nl" %}
+Lesgeven
+--------
+
+Ik was betrokken met de volgende {{ num_teaching }} lessen:
+
+{{ teaching_table }}
+
+{% else %}
+
+Teaching
+--------
+
+I’ve been involved in the teaching of {{ num_teaching }} courses:
+
+{{ teaching_table }}
+
+{% endif %}
