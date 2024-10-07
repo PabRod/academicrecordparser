@@ -26,10 +26,8 @@ def parse(key=_default_key()):
 def enrich(data):
     """ Enrich table with extra columns """
     from readgsheets.auxs import clickable_link, countryname_as_flag
-
-    data["Name"] = data["Name"].where(pd.isna(data["URL"]), 
-                                      clickable_link(data["Name"], data["URL"]))
-    
+  
+    data = data.assign(Name = lambda df : clickable_link(df["Name"], df["URL"]))
     data = data.assign(Country = lambda df : countryname_as_flag(df["Country"]))
     
     return data
