@@ -1,5 +1,7 @@
 import pandas as pd
 from tabulate import tabulate
+from pathlib import Path
+from jinja2 import Environment, FileSystemLoader
 
 # ===== Input =====
 def get_data():
@@ -47,3 +49,16 @@ def as_table(data):
                     tablefmt="github",
                     headers="keys", 
                     showindex=False)
+
+def use_template(slug, lang, output_dir, environment=Environment(loader=FileSystemLoader("templates/")), **template_args):
+    """ Turn dictionary data into document via a jinja template """
+    ## Load the template
+    template = environment.get_template(f"{slug}.jinja")
+
+    ## Create the content
+    content = template.render(lang = lang, **template_args) # Pass all args but lang as dictionary
+
+    ## Save it
+    filename = Path(output_dir, f"{slug}-test-{lang}.md")
+    with open(filename, mode = "w") as f:
+        f.write(content)
