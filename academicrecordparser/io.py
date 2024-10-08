@@ -2,7 +2,7 @@ import pandas as pd
 from tabulate import tabulate
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
-from readgsheets.filters import *
+from academicrecordparser.filters import *
 
 # ===== Input =====
 def get_data():
@@ -25,7 +25,7 @@ def parse(key=_default_key()):
 
 def enrich(data):
     """ Enrich table with extra columns """
-    from readgsheets.auxs import clickable_link, countryname_as_flag
+    from academicrecordparser.auxs import clickable_link, countryname_as_flag
   
     data = data.assign(Name = lambda df : clickable_link(df["Name"], df["URL"]))
     data = data.assign(Country = lambda df : countryname_as_flag(df["Country"]))

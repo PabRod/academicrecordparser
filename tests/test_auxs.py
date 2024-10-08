@@ -1,4 +1,4 @@
-from readgsheets.auxs import *
+from academicrecordparser.auxs import *
 
 def test_clickable_link():
     expected = '[My website](https://pabrod.github.io)'
