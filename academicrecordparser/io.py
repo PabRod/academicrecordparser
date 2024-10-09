@@ -16,10 +16,19 @@ def _default_key():
         
         return(key)
 
-def parse(key=_default_key()):
+def parse(key=_default_key(), backup=True):
     """ Return the raw data """
     link = f"https://docs.google.com/spreadsheets/export?id={key}&format=csv"
-    data = pd.read_csv(link)
+    backup_path = 'data/backup.csv'
+    
+    try:
+        data = pd.read_csv(link)
+    except:
+        data = pd.read_csv(backup_path)
+        print("WARNING: the Google sheet couldn't be accessed. Using backup instead.")
+
+    if(backup):
+        data.to_csv(backup_path)
     
     return data
 
