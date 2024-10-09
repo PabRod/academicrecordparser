@@ -10,5 +10,6 @@ template_args = as_template_args(get_data())
 environment = Environment(loader=FileSystemLoader("templates/"))
 
 for slug in slugs:
+    print(f"Writing {slug}")
     for lang in langs:
         use_template(slug, lang, output_dir, environment, **template_args)
