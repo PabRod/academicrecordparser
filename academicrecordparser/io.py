@@ -53,6 +53,9 @@ def drop_clutter(data):
     return data.drop(columns = TO_BE_DROPPED)
 
 def as_template_args(data):
+    """ Format all the data into a big dictionary 
+    
+    The keys will be taken as arguments by the Jinja templates"""
     template_args = {"publications_table" : as_table(papers(data)), 
                      "num_publications" : papers(data).shape[0],
                      "books_table" : as_table(books(data)),
