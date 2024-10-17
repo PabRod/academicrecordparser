@@ -15,4 +15,7 @@ def countryname_as_flag(countryname):
     if isna(countryname):
         return countryname
     else:
-        return countries.get(name = countryname).flag
+        try:
+            return countries.get(name = countryname).flag
+        except:
+            return countryname # Useful when there is a typo in the country name
